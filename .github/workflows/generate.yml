@@ -1,12 +1,10 @@
 name: Generate USAllParts YML
+
 on:
-  repository_dispatch:
-    types: [sheets-updated]
+  schedule:
+    - cron: "*/10 * * * *"   # кожні 10 хвилин
   workflow_dispatch:
-    inputs:
-      csv_url:
-        description: "Google Sheets CSV export URL"
-        required: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,21 +14,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - id: resolve
+      
+      - name: Generate YML
         run: |
-          if [ -n "${{ github.event.client_payload.csv_url }}" ]; then
-            echo "csv=${{ github.event.client_payload.csv_url }}" >> $GITHUB_OUTPUT
-          elif [ -n "${{ github.event.inputs.csv_url }}" ]; then
-            echo "csv=${{ github.event.inputs.csv_url }}" >> $GITHUB_OUTPUT
-          else
-            echo "csv=" >> $GITHUB_OUTPUT
-          fi
-      - name: Generate
-        env:
-          MY_PRODUCTS_SHEET_URL: ${{ steps.resolve.outputs.csv }}
-        run: |
-          [ -z "$MY_PRODUCTS_SHEET_URL" ] && echo "CSV URL not provided" && exit 1
           python3 yml_build.py
+          ls -la USAllParts.yml
+      
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

@@ -3,7 +3,8 @@ import os, csv, sys, urllib.request, xml.etree.ElementTree as ET
 from io import StringIO
 from datetime import datetime
 
-CSV_URL = os.getenv("MY_PRODUCTS_SHEET_URL","").strip()
+# Фіксований URL вашого Google Sheets
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1gq1c4L2TEyRmxNpbRGHJdSNYtd2FNgOMi9-a1CX5ZDQ/export?format=csv&gid=401593410"
 OUT_FILE = "USAllParts.yml"
 
 def sanitize_text(text):
@@ -12,6 +13,7 @@ def sanitize_text(text):
     return str(text).strip()
 
 def load_products(url):
+    print(f"📦 Завантажую дані з Google Sheets...")
     with urllib.request.urlopen(url) as r: 
         txt = r.read().decode("utf-8", errors="ignore")
     rows = list(csv.reader(StringIO(txt)))
@@ -19,6 +21,8 @@ def load_products(url):
         return []
     
     headers = [h.strip().lower() for h in rows[0]]
+    print(f"📋 Заголовки: {headers[:8]}...")
+    
     def idx(*names, d=None):
         s = {n.lower() for n in names}
         for i, h in enumerate(headers):
@@ -37,6 +41,8 @@ def load_products(url):
     
     need = max(i_code, i_vendor, i_name, i_photos, i_qty, i_price, i_curr, i_presence)
     products = []
+    loaded = 0
+    skipped = 0
     
     for r in rows[1:]:
         if len(r) <= need: 
@@ -67,6 +73,7 @@ def load_products(url):
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
         
         if not code or not name or price is None: 
+            skipped += 1
             continue
         
         products.append({
@@ -82,10 +89,18 @@ def load_products(url):
             "vendor": vendor,
             "vendor_code": code
         })
+        loaded += 1
+    
+    print(f"✅ Завантажено: {loaded} товарів")
+    print(f"⚠️ Пропущено: {skipped}")
+    available = sum(1 for p in products if p['presence'])
+    print(f"📊 В наявності: {available}/{loaded}")
     
     return products
 
 def write_yml(products, filename):
+    print(f"📝 Генерую YML файл...")
+    
     # Створюємо XML структуру як у основному коді
     root = ET.Element('yml_catalog')
     root.set('date', datetime.now().strftime('%Y-%m-%d %H:%M'))
@@ -157,14 +172,17 @@ def write_yml(products, filename):
     ET.indent(tree, space="  ", level=0)
     tree.write(filename, encoding='utf-8', xml_declaration=True)
     
-    print(f"✅ Згенеровано {filename} з {len(products)} товарами")
+    print(f"🎉 Згенеровано {filename} з {len(products)} товарами")
 
 def main():
-    if not CSV_URL: 
-        print("❌ No MY_PRODUCTS_SHEET_URL")
+    print("🚀 Генератор USAllParts YML")
+    print("=" * 40)
+    
+    products = load_products(SHEET_URL)
+    if not products:
+        print("❌ Не знайдено товарів")
         sys.exit(1)
     
-    products = load_products(CSV_URL)
     write_yml(products, OUT_FILE)
 
 if __name__ == "__main__":
