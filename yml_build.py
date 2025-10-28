@@ -62,7 +62,7 @@ def load_products(url, categories):
         return []
     
     headers = [h.strip().lower() for h in rows[0]]
-    print(f"📋 Заголовки: {headers[:8]}...")
+    print(f"📋 Заголовки: {headers}")
     
     def idx(*names, d=None):
         s = {n.lower() for n in names}
@@ -76,10 +76,27 @@ def load_products(url, categories):
     i_name = idx("назва частини","назва","name","title", d=2)
     i_photos = idx("фото","photos","pictures","images", d=3)
     i_qty = idx("к-ть","кількість","quantity","qty", d=4)
-    i_price = idx("ціна","price", d=5)
+    i_price = idx("ціна в uah","price_uah","ціна в uah", d=9)  # Колонка J (індекс 9)
     i_curr = idx("код валюти","валюта","currency", d=6)
     i_presence = idx("наявність","availability","available","is_available", d=7)
     i_category = idx("категорія","category","тип","type","група","group", d=8)
+    i_exchange_rate = idx("курс","exchange","rate","usd-uah","долар", d=10)  # Колонка K (індекс 10)
+    
+    # Знаходимо курс долара з клітинки I2 (індекс 8, рядок 1)
+    usd_rate = 38.0  # За замовчуванням
+    try:
+        if len(rows) > 1 and len(rows[1]) > 8:  # Рядок 2 (індекс 1), колонка I (індекс 8)
+            rate_text = rows[1][8].strip()
+            print(f"🔍 Діагностика I2: '{rate_text}' (довжина: {len(rate_text)})")
+            if rate_text and rate_text.replace(".", "").replace(",", "").replace("-", "").isdigit():
+                usd_rate = float(rate_text.replace(",", "."))
+                print(f"💱 Курс USD-UAH з I2: {usd_rate}")
+            else:
+                print(f"⚠️ Клітинка I2 порожня або не містить число, використовую {usd_rate}")
+        else:
+            print(f"⚠️ Не вдалося прочитати клітинку I2, використовую {usd_rate}")
+    except Exception as e:
+        print(f"⚠️ Помилка читання курсу з I2: {e}, використовую {usd_rate}")
     
     need = max(i_code, i_vendor, i_name, i_photos, i_qty, i_price, i_curr, i_presence, i_category)
     products = []
@@ -102,14 +119,17 @@ def load_products(url, categories):
         except: 
             qty = 0
         
-        ps = sanitize_text(r[i_price]).replace(",", ".")
+        ps = sanitize_text(r[i_price])
+        # Парсимо ціну з формату "1 263 грн." або "1263"
         try: 
-            price = float(ps) if ps else None
-        except: 
+            # Видаляємо "грн." та всі види пробілів, замінюємо кому на крапку
+            clean_price = ps.replace("грн.", "").replace(" ", "").replace("\xa0", "").replace(",", ".")
+            price = float(clean_price) if clean_price else None
+        except Exception as e: 
             price = None
         
-        curr_raw = sanitize_text(r[i_curr]) or "30"
-        currency = "UAH" if curr_raw == "30" else ("USD" if curr_raw == "840" else curr_raw.upper())
+        # Ціни вже в гривнях в колонці J
+        currency = "UAH"
         
         av = sanitize_text(r[i_presence]).lower()
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
@@ -222,7 +242,11 @@ def write_yml(products, categories, filename):
     # Зберігаємо XML з правильним форматуванням
     tree = ET.ElementTree(root)
     ET.indent(tree, space="  ", level=0)
-    tree.write(filename, encoding='utf-8', xml_declaration=True)
+    
+    # Зберігаємо з правильним кодуванням UTF-8
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write('<?xml version="1.0" encoding="utf-8"?>\n')
+        tree.write(f, encoding='unicode', xml_declaration=False)
     
     print(f"🎉 Згенеровано {filename} з {len(products)} товарами та {len(categories)} категоріями")
 
