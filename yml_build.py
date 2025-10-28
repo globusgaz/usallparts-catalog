@@ -5,7 +5,6 @@ from datetime import datetime
 
 # Фіксовані URL
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1gq1c4L2TEyRmxNpbRGHJdSNYtd2FNgOMi9-a1CX5ZDQ/export?format=csv&gid=401593410"
-CATEGORIES_URL = "https://docs.google.com/spreadsheets/d/1GqFHdi5-5YszbgyubWNQUwbAsLATikK47V80vtu5WhA/export?format=csv"
 OUT_FILE = "USAllParts.yml"
 
 def sanitize_text(text):
@@ -14,41 +13,45 @@ def sanitize_text(text):
     return str(text).strip()
 
 def load_categories():
-    """Завантажуємо категорії з USAllParts таблиці"""
-    try:
-        print(f"📁 Завантажую категорії з Google Sheets...")
-        with urllib.request.urlopen(CATEGORIES_URL) as r: 
-            txt = r.read().decode("utf-8", errors="ignore")
-        rows = list(csv.reader(StringIO(txt)))
-        if not rows: 
-            return {"0": "Автозапчастини"}
-        
-        categories = {"0": "Автозапчастини"}  # Базова категорія
-        headers = [h.strip().lower() for h in rows[0]]
-        
-        # Шукаємо колонки з категоріями
-        def idx(*names, d=None):
-            s = {n.lower() for n in names}
-            for i, h in enumerate(headers):
-                if h in s: 
-                    return i
-            return d
-        
-        i_category = idx("категорія", "category", "тип", "type", "група", "group", d=1)
-        
-        for r in rows[1:]:
-            if len(r) > i_category and r[i_category]:
-                cat_name = sanitize_text(r[i_category])
-                if cat_name and cat_name not in categories.values():
-                    cat_id = str(len(categories))
-                    categories[cat_id] = cat_name
-        
-        print(f"📋 Завантажено {len(categories)} категорій")
-        return categories
-        
-    except Exception as e:
-        print(f"⚠️ Помилка завантаження категорій: {e}")
-        return {"0": "Автозапчастини"}
+    """Створюємо категорії на основі виробників"""
+    categories = {
+        "0": "Автозапчастини",
+        "1": "MITSUBISHI",
+        "2": "TOYOTA", 
+        "3": "HONDA",
+        "4": "NISSAN",
+        "5": "MAZDA",
+        "6": "SUBARU",
+        "7": "HYUNDAI",
+        "8": "KIA",
+        "9": "FORD",
+        "10": "CHEVROLET",
+        "11": "DODGE",
+        "12": "CHRYSLER",
+        "13": "JEEP",
+        "14": "BMW",
+        "15": "MERCEDES",
+        "16": "AUDI",
+        "17": "VOLKSWAGEN",
+        "18": "VOLVO",
+        "19": "SAAB",
+        "20": "LEXUS",
+        "21": "ACURA",
+        "22": "INFINITI",
+        "23": "CADILLAC",
+        "24": "LINCOLN",
+        "25": "BUICK",
+        "26": "PONTIAC",
+        "27": "OLDSMOBILE",
+        "28": "SATURN",
+        "29": "ISUZU",
+        "30": "SUZUKI",
+        "31": "DAIHATSU",
+        "32": "Інші виробники"
+    }
+    
+    print(f"📋 Створено {len(categories)} категорій на основі виробників")
+    return categories
 
 def load_products(url, categories):
     print(f"📦 Завантажую товари з Google Sheets...")
@@ -111,11 +114,12 @@ def load_products(url, categories):
         av = sanitize_text(r[i_presence]).lower()
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
         
-        # Категорія товару
-        product_category = sanitize_text(r[i_category]) if i_category < len(r) else ""
-        category_id = "0"  # За замовчуванням
+        # Категорія товару на основі виробника
+        vendor_upper = vendor.upper()
+        category_id = "32"  # За замовчуванням "Інші виробники"
+        
         for cat_id, cat_name in categories.items():
-            if product_category and product_category.lower() in cat_name.lower():
+            if cat_name.upper() == vendor_upper:
                 category_id = cat_id
                 break
         
