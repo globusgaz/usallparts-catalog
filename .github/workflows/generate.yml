@@ -19,8 +19,10 @@ jobs:
       
       - name: Generate YML
         run: |
+          export PYTHONIOENCODING=utf-8
           python3 yml_build.py
           ls -la USAllParts.yml
+          head -5 USAllParts.yml
       
       - name: Commit and push
         run: |
