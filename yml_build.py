@@ -3,8 +3,9 @@ import os, csv, sys, urllib.request, xml.etree.ElementTree as ET
 from io import StringIO
 from datetime import datetime
 
-# Фіксований URL вашого Google Sheets
+# Фіксовані URL
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1gq1c4L2TEyRmxNpbRGHJdSNYtd2FNgOMi9-a1CX5ZDQ/export?format=csv&gid=401593410"
+CATEGORIES_URL = "https://docs.google.com/spreadsheets/d/1GqFHdi5-5YszbgyubWNQUwbAsLATikK47V80vtu5WhA/export?format=csv"
 OUT_FILE = "USAllParts.yml"
 
 def sanitize_text(text):
@@ -12,8 +13,45 @@ def sanitize_text(text):
         return ""
     return str(text).strip()
 
-def load_products(url):
-    print(f"📦 Завантажую дані з Google Sheets...")
+def load_categories():
+    """Завантажуємо категорії з USAllParts таблиці"""
+    try:
+        print(f"📁 Завантажую категорії з Google Sheets...")
+        with urllib.request.urlopen(CATEGORIES_URL) as r: 
+            txt = r.read().decode("utf-8", errors="ignore")
+        rows = list(csv.reader(StringIO(txt)))
+        if not rows: 
+            return {"0": "Автозапчастини"}
+        
+        categories = {"0": "Автозапчастини"}  # Базова категорія
+        headers = [h.strip().lower() for h in rows[0]]
+        
+        # Шукаємо колонки з категоріями
+        def idx(*names, d=None):
+            s = {n.lower() for n in names}
+            for i, h in enumerate(headers):
+                if h in s: 
+                    return i
+            return d
+        
+        i_category = idx("категорія", "category", "тип", "type", "група", "group", d=1)
+        
+        for r in rows[1:]:
+            if len(r) > i_category and r[i_category]:
+                cat_name = sanitize_text(r[i_category])
+                if cat_name and cat_name not in categories.values():
+                    cat_id = str(len(categories))
+                    categories[cat_id] = cat_name
+        
+        print(f"📋 Завантажено {len(categories)} категорій")
+        return categories
+        
+    except Exception as e:
+        print(f"⚠️ Помилка завантаження категорій: {e}")
+        return {"0": "Автозапчастини"}
+
+def load_products(url, categories):
+    print(f"📦 Завантажую товари з Google Sheets...")
     with urllib.request.urlopen(url) as r: 
         txt = r.read().decode("utf-8", errors="ignore")
     rows = list(csv.reader(StringIO(txt)))
@@ -38,8 +76,9 @@ def load_products(url):
     i_price = idx("ціна","price", d=5)
     i_curr = idx("код валюти","валюта","currency", d=6)
     i_presence = idx("наявність","availability","available","is_available", d=7)
+    i_category = idx("категорія","category","тип","type","група","group", d=8)
     
-    need = max(i_code, i_vendor, i_name, i_photos, i_qty, i_price, i_curr, i_presence)
+    need = max(i_code, i_vendor, i_name, i_photos, i_qty, i_price, i_curr, i_presence, i_category)
     products = []
     loaded = 0
     skipped = 0
@@ -72,6 +111,14 @@ def load_products(url):
         av = sanitize_text(r[i_presence]).lower()
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
         
+        # Категорія товару
+        product_category = sanitize_text(r[i_category]) if i_category < len(r) else ""
+        category_id = "0"  # За замовчуванням
+        for cat_id, cat_name in categories.items():
+            if product_category and product_category.lower() in cat_name.lower():
+                category_id = cat_id
+                break
+        
         if not code or not name or price is None: 
             skipped += 1
             continue
@@ -85,7 +132,7 @@ def load_products(url):
             "presence": presence,
             "quantity": qty if presence else 0,
             "pictures": pics,
-            "category_id": "0",
+            "category_id": category_id,
             "vendor": vendor,
             "vendor_code": code
         })
@@ -98,10 +145,10 @@ def load_products(url):
     
     return products
 
-def write_yml(products, filename):
+def write_yml(products, categories, filename):
     print(f"📝 Генерую YML файл...")
     
-    # Створюємо XML структуру як у основному коді
+    # Створюємо XML структуру
     root = ET.Element('yml_catalog')
     root.set('date', datetime.now().strftime('%Y-%m-%d %H:%M'))
     
@@ -123,8 +170,9 @@ def write_yml(products, filename):
     ET.SubElement(currencies, 'currency', id='USD', rate='38')
     
     # Категорії
-    categories = ET.SubElement(shop, 'categories')
-    ET.SubElement(categories, 'category', id='0').text = 'Автозапчастини'
+    categories_elem = ET.SubElement(shop, 'categories')
+    for cat_id, cat_name in categories.items():
+        ET.SubElement(categories_elem, 'category', id=cat_id).text = cat_name
     
     # Товари
     offers = ET.SubElement(shop, 'offers')
@@ -172,18 +220,23 @@ def write_yml(products, filename):
     ET.indent(tree, space="  ", level=0)
     tree.write(filename, encoding='utf-8', xml_declaration=True)
     
-    print(f"🎉 Згенеровано {filename} з {len(products)} товарами")
+    print(f"🎉 Згенеровано {filename} з {len(products)} товарами та {len(categories)} категоріями")
 
 def main():
     print("🚀 Генератор USAllParts YML")
     print("=" * 40)
     
-    products = load_products(SHEET_URL)
+    # Завантажуємо категорії
+    categories = load_categories()
+    
+    # Завантажуємо товари
+    products = load_products(SHEET_URL, categories)
     if not products:
         print("❌ Не знайдено товарів")
         sys.exit(1)
     
-    write_yml(products, OUT_FILE)
+    # Генеруємо YML
+    write_yml(products, categories, OUT_FILE)
 
 if __name__ == "__main__":
     main()
