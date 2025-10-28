@@ -2,8 +2,10 @@ name: Generate USAllParts YML
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # кожні 10 хвилин
+    - cron: "*/10 * * * *"   # кожні 10 хвилин (резервний)
   workflow_dispatch:
+  repository_dispatch:
+    types: [sheets-updated]
 
 jobs:
   build:
