@@ -91,12 +91,15 @@ def load_products(url, categories):
             skipped += 1
             continue
         
+        # Додаємо артикул на початок назви для кращого пошуку на Prom.ua
+        name_with_code = f"{code} {name}" if code not in name.upper() else name
+        
         products.append({
             "id": f"f0_{code}",
-            "name": name,
+            "name": name_with_code,
             "price": price,
             "currency": currency or "UAH",
-            "description": name,
+            "description": name_with_code,  # Також додаємо в опис
             "presence": presence,
             "quantity": qty if presence else 0,
             "pictures": pics,
