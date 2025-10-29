@@ -13,44 +13,11 @@ def sanitize_text(text):
     return str(text).strip()
 
 def load_categories():
-    """Створюємо категорії на основі виробників"""
+    """Єдина категорія для коректної класифікації на Prom.ua"""
     categories = {
-        "0": "Автозапчастини",
-        "1": "MITSUBISHI",
-        "2": "TOYOTA", 
-        "3": "HONDA",
-        "4": "NISSAN",
-        "5": "MAZDA",
-        "6": "SUBARU",
-        "7": "HYUNDAI",
-        "8": "KIA",
-        "9": "FORD",
-        "10": "CHEVROLET",
-        "11": "DODGE",
-        "12": "CHRYSLER",
-        "13": "JEEP",
-        "14": "BMW",
-        "15": "MERCEDES",
-        "16": "AUDI",
-        "17": "VOLKSWAGEN",
-        "18": "VOLVO",
-        "19": "SAAB",
-        "20": "LEXUS",
-        "21": "ACURA",
-        "22": "INFINITI",
-        "23": "CADILLAC",
-        "24": "LINCOLN",
-        "25": "BUICK",
-        "26": "PONTIAC",
-        "27": "OLDSMOBILE",
-        "28": "SATURN",
-        "29": "ISUZU",
-        "30": "SUZUKI",
-        "31": "DAIHATSU",
-        "32": "Інші виробники"
+        "1": "Автозапчастини та комплектуючі"
     }
-    
-    print(f"📋 Створено {len(categories)} категорій на основі виробників")
+    print(f"📋 Створено {len(categories)} категорію: 'Автозапчастини та комплектуючі'")
     return categories
 
 def load_products(url, categories):
@@ -117,14 +84,8 @@ def load_products(url, categories):
         av = sanitize_text(r[i_presence]).lower()
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
         
-        # Категорія товару на основі виробника
-        vendor_upper = vendor.upper()
-        category_id = "32"  # За замовчуванням "Інші виробники"
-        
-        for cat_id, cat_name in categories.items():
-            if cat_name.upper() == vendor_upper:
-                category_id = cat_id
-                break
+        # Фіксована категорія для всіх товарів
+        category_id = "1"
         
         if not code or not name or price is None: 
             skipped += 1
