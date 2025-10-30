@@ -2,8 +2,9 @@ name: Generate USAllParts YML
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [sheets-updated]
+  repository_dispatch: {}
+  schedule:
+    - cron: '0 * * * *'
 
 permissions:
   contents: write
@@ -11,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: usallparts-generate
+      cancel-in-progress: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
