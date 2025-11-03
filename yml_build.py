@@ -24,19 +24,18 @@ def load_categories():
 
 def load_products(url, categories):
     print(f"📦 Завантажую товари з Google Sheets...")
-    with urllib.request.urlopen(url) as r: 
+    with urllib.request.urlopen(url) as r:
         txt = r.read().decode("utf-8", errors="ignore")
     rows = list(csv.reader(StringIO(txt)))
     if not rows:
         return []
-    
-    headers = [h.strip().lower() for h in rows[0]]
-    print(f"📋 Заголовки: {headers}")
-    
+
+    headers = [h.strip().lower() for h in rows]
+
     def idx(*names, d=None):
         s = {n.lower() for n in names}
         for i, h in enumerate(headers):
-            if h in s: 
+            if h in s:
                 return i
         return d
 
@@ -49,35 +48,35 @@ def load_products(url, categories):
     i_curr = idx("код валюти","валюта","currency", d=6)
     i_presence = idx("наявність","availability","available","is_available", d=7)
     i_category = idx("категорія","category","тип","type","група","group", d=8)
-    
+
     need = max(i_code, i_vendor, i_name, i_photos, i_qty, i_price, i_curr, i_presence, i_category)
     products = []
     loaded = 0
     skipped = 0
-    
+
     for r in rows[1:]:
-        if len(r) <= need: 
+        if len(r) <= need:
             r += [""] * (need - len(r) + 1)
         code = sanitize_text(r[i_code])
         name = sanitize_text(r[i_name])
         vendor = sanitize_text(r[i_vendor]) or "USAllParts"
         photos_raw = sanitize_text(r[i_photos])
         pics = [p.strip() for p in photos_raw.replace("\n"," ").replace("|",",").split(",") if p.strip()][:10]
-        try: 
+        try:
             qty = int(float(sanitize_text(r[i_qty]) or "0"))
         except Exception:
             qty = 0
         ps = sanitize_text(r[i_price])
-        try: 
+        try:
             clean_price = ps.replace("грн.", "").replace(" ", "").replace("\xa0", "").replace(",", ".")
             price = float(clean_price) if clean_price else None
-        except Exception: 
+        except Exception:
             price = None
         currency = "UAH"
         av = sanitize_text(r[i_presence]).lower()
         presence = (av in ["true","1","yes","в наявності","наявний","+"]) or (qty > 0)
         category_id = "1"
-        if not code or not name or price is None: 
+        if not code or not name or price is None:
             skipped += 1
             continue
         name_with_code = f"{code} {name}" if code not in name.upper() else name
@@ -95,7 +94,7 @@ def load_products(url, categories):
             "vendor_code": code
         })
         loaded += 1
-    
+
     print(f"✅ Завантажено: {loaded} товарів")
     print(f"⚠️ Пропущено: {skipped}")
     available = sum(1 for p in products if p['presence'])
@@ -136,7 +135,6 @@ def write_yml(products, categories, filename):
         vendor.text = p['vendor']
         vendor_code = ET.SubElement(offer, 'vendorCode')
         vendor_code.text = p['vendor_code']
-        # Додаємо параметри Prom.ua/TecDoc
         param_brand = ET.SubElement(offer, 'param', name="Виробник")
         param_brand.text = p['vendor']
         param_code = ET.SubElement(offer, 'param', name="Код запчастини")
@@ -162,13 +160,12 @@ def main():
         print("❌ Не знайдено товарів")
         sys.exit(1)
     print(f"🔍 Діагностика першого товару:")
-    if products:
-        first = products
-        print(f"  Назва: '{first['name']}'")
-        print(f"  Ціна: {first['price']}")
-        print(f"  Валюта: {first['currency']}")
-        print(f"  Виробник: {first['vendor']}")
-        print(f"  Код запчастини: {first['vendor_code']}")
+    first = products
+    print(f"  Назва: '{first['name']}'")
+    print(f"  Ціна: {first['price']}")
+    print(f"  Валюта: {first['currency']}")
+    print(f"  Виробник: {first['vendor']}")
+    print(f"  Код запчастини: {first['vendor_code']}")
     write_yml(products, categories, OUT_FILE)
 
 if __name__ == "__main__":
