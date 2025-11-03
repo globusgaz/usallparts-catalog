@@ -30,7 +30,7 @@ def load_products(url, categories):
     if not rows:
         return []
     
-    headers = [h.strip().lower() for h in rows]
+    headers = [h.strip().lower() for h in rows[0]]
     print(f"📋 Заголовки: {headers}")
     
     def idx(*names, d=None):
