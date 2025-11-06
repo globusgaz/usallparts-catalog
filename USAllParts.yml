@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2025-11-06 11:18">
+<yml_catalog date="2025-11-06 12:42">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -319,7 +319,7 @@
       </offer>
       <offer id="f0_04726567AH" available="true">
         <name>04726567AH блок абс 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -358,7 +358,7 @@
       </offer>
       <offer id="f0_04766548AC" available="true">
         <name>04766548AC Кронштейн акпп</name>
-        <price>967.0</price>
+        <price>968.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -397,7 +397,7 @@
       </offer>
       <offer id="f0_04884510AD" available="true">
         <name>04884510AD ГБЦ 2.4 з розпредвалами</name>
-        <price>12619.0</price>
+        <price>12620.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -943,7 +943,7 @@
       </offer>
       <offer id="f0_05106270AE" available="true">
         <name>05106270AE Редуктор задній 70к пробіг</name>
-        <price>12619.0</price>
+        <price>12620.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -1254,7 +1254,7 @@
       </offer>
       <offer id="f0_05184070AK" available="true">
         <name>05184070AK Впускной коллектор Journey12-. 3.6l</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -1660,7 +1660,7 @@
       </offer>
       <offer id="f0_1CZ91TZZAH" available="true">
         <name>1CZ91TZZAH Дверь задняя (багажная 3/5-я (ляда) в зборе</name>
-        <price>10516.0</price>
+        <price>10517.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2198,7 +2198,7 @@
       </offer>
       <offer id="f0_1UV64AXRAD" available="true">
         <name>1UV64AXRAD Зеркало праве pxr</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2213,7 +2213,7 @@
       </offer>
       <offer id="f0_1UV64TZZAD" available="true">
         <name>1UV64TZZAD Зеркало бокове праве 3 пін PXR</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2228,7 +2228,7 @@
       </offer>
       <offer id="f0_1VF37AXRAD" available="true">
         <name>1VF37AXRAD Зеркало ліве бокове 5пін підігрів PXR</name>
-        <price>6099.0</price>
+        <price>6100.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2243,7 +2243,7 @@
       </offer>
       <offer id="f0_1VR94DX9AD" available="true">
         <name>1VR94DX9AD Обшивка арки</name>
-        <price>1598.0</price>
+        <price>1599.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2547,7 +2547,7 @@
       </offer>
       <offer id="f0_4581914AD" available="true">
         <name>4581914AD трубка вакуумная</name>
-        <price>967.0</price>
+        <price>968.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -2943,7 +2943,7 @@
       </offer>
       <offer id="f0_50054372E7" available="true">
         <name>50054372E7 блок управління двигуном 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>5468.0</price>
+        <price>5469.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -3101,7 +3101,7 @@
       </offer>
       <offer id="f0_5074913AG" available="true">
         <name>5074913AG Скло ляди компас</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -3647,7 +3647,7 @@
       </offer>
       <offer id="f0_5184251AH" available="true">
         <name>5184251AH Коленвал двигателя</name>
-        <price>9254.0</price>
+        <price>9255.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -3767,7 +3767,7 @@
       </offer>
       <offer id="f0_55057211AA" available="true">
         <name>55057211AA Печка в сборе Jeep 2.4</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -4076,7 +4076,7 @@
       </offer>
       <offer id="f0_5LT19VXLAB" available="true">
         <name>5LT19VXLAB піддон багажника cherokee</name>
-        <price>967.0</price>
+        <price>968.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -4236,7 +4236,7 @@
       </offer>
       <offer id="f0_5UQ33DX8AD" available="true">
         <name>5UQ33DX8AD Рейлінг пара дах 5ur18trmab, 5ur19trmab, 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -4249,7 +4249,7 @@
       </offer>
       <offer id="f0_5UR18TRMAB" available="true">
         <name>5UR18TRMAB Рейлінг пара дах</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -4405,7 +4405,7 @@
       </offer>
       <offer id="f0_5VA43DX9AC" available="true">
         <name>5VA43DX9AC Консоль центральная подлокотник и подстаканники Jeep Compass 17- кожа черн</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -5232,7 +5232,7 @@
       </offer>
       <offer id="f0_68092684AE" available="true">
         <name>68092684AE Блок управления двигателем  Journey12-. 3.6l 44</name>
-        <price>5468.0</price>
+        <price>5469.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -5491,7 +5491,7 @@
       </offer>
       <offer id="f0_68102996AH" available="true">
         <name>68102996AH Рейлинги</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -5570,7 +5570,7 @@
       </offer>
       <offer id="f0_68103197AC" available="true">
         <name>68103197AC Компресор кондиціонера cherokee</name>
-        <price>4164.0</price>
+        <price>4165.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -5639,7 +5639,7 @@
       </offer>
       <offer id="f0_68103400AG" available="true">
         <name>68103400AG проводка мотора JOURNEY 2.4</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -5804,7 +5804,7 @@
       </offer>
       <offer id="f0_68140626AB" available="true">
         <name>68140626AB Рулевая рейка Journey12-. 3.6l</name>
-        <price>5468.0</price>
+        <price>5469.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6216,7 +6216,7 @@
       </offer>
       <offer id="f0_68176459AD" available="true">
         <name>68176459AD проводка мотора JOURNEY 2.4</name>
-        <price>2860.0</price>
+        <price>2861.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6386,7 +6386,7 @@
       </offer>
       <offer id="f0_68200241AD" available="true">
         <name>блок ECU jornej 2.4 68200241ad</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6709,7 +6709,7 @@
       </offer>
       <offer id="f0_68238841AB" available="true">
         <name>68238841AB Піввісь перед ліва cherokee</name>
-        <price>6099.0</price>
+        <price>6100.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6801,7 +6801,7 @@
       </offer>
       <offer id="f0_68247610AE" available="true">
         <name>68247610AE Пічка в зборі</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6935,7 +6935,7 @@
       </offer>
       <offer id="f0_68252670AO" available="true">
         <name>68252670AO Насос масляный ДВС Dodge Journey 11-19 3.6</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6948,7 +6948,7 @@
       </offer>
       <offer id="f0_68253034AB" available="true">
         <name>68253034AB Кронштейн подушки двигна перед лівий 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7026,7 +7026,7 @@
       </offer>
       <offer id="f0_68257065AB" available="true">
         <name>68257065AB Піввісь зад права cherokee</name>
-        <price>4837.0</price>
+        <price>4838.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7092,7 +7092,7 @@
       </offer>
       <offer id="f0_68257901AA" available="true">
         <name>68257901AA акпп Jeep Cherokee KL 14-18 дорест 2.4 44</name>
-        <price>26921.0</price>
+        <price>26923.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7210,7 +7210,7 @@
       </offer>
       <offer id="f0_68264524AC" available="true">
         <name>68264524AC Блок запобіжників</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7252,7 +7252,7 @@
       </offer>
       <offer id="f0_68264741AA" available="true">
         <name>68264741AA Двигатель Journey 3.6 4x4 на ЗЧ</name>
-        <price>21032.0</price>
+        <price>21033.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7466,7 +7466,7 @@
       </offer>
       <offer id="f0_68272855AB" available="true">
         <name>68272855AB Електропроводка радиаторов на JEEP CHEROKEE (KL)</name>
-        <price>4164.0</price>
+        <price>4165.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7520,7 +7520,7 @@
       </offer>
       <offer id="f0_68282446AB" available="true">
         <name>68282446AB Роздаточна коробка cherokee</name>
-        <price>12619.0</price>
+        <price>12620.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7559,7 +7559,7 @@
       </offer>
       <offer id="f0_68290594AB" available="true">
         <name>68290594AB Корпус повітряного фільтра cherokee</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7599,7 +7599,7 @@
       </offer>
       <offer id="f0_68292105AE" available="true">
         <name>68292105AE Блок ЕСУ компютер Cherokee 16</name>
-        <price>4206.0</price>
+        <price>4207.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7613,7 +7613,7 @@
       </offer>
       <offer id="f0_68292645AB" available="true">
         <name>68292645AB АКПП, 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>25239.0</price>
+        <price>25240.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7640,7 +7640,7 @@
       </offer>
       <offer id="f0_68292767AC" available="false">
         <name>68292767AC Роздаточна коробка передній редуктор 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>10516.0</price>
+        <price>10517.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8116,7 +8116,7 @@
       </offer>
       <offer id="f0_68369232AA" available="true">
         <name>68369232AA Двигатель 2,4 4х4 cherokee 70к пробіг</name>
-        <price>23136.0</price>
+        <price>23137.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8157,7 +8157,7 @@
       </offer>
       <offer id="f0_68381687AB" available="true">
         <name>68381687AB модуль управління кузовом bcm 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>2860.0</price>
+        <price>2861.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8619,7 +8619,7 @@
       </offer>
       <offer id="f0_P68084914AA" available="true">
         <name>P68084914AA Компрессор кондиционера Journey12-. 3.6l</name>
-        <price>5468.0</price>
+        <price>5469.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8688,7 +8688,7 @@
       </offer>
       <offer id="f0_RL227475AP" available="true">
         <name>RL227475AP АКПП Чірокі кл</name>
-        <price>27342.0</price>
+        <price>27343.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8978,7 +8978,7 @@
       </offer>
       <offer id="f0_CAT327020B" available="true">
         <name>CAT327020B Задній диференціал редуктор мазда 3 2019року 15к пробіг</name>
-        <price>21032.0</price>
+        <price>21033.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>MAZDA</vendor>
