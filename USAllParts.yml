@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2025-11-15 09:18">
+<yml_catalog date="2025-11-15 10:19">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -1660,7 +1660,7 @@
       </offer>
       <offer id="f0_1CZ91TZZAH" available="true">
         <name>1CZ91TZZAH Дверь задняя (багажная 3/5-я (ляда) в зборе</name>
-        <price>10500.0</price>
+        <price>10501.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -1673,7 +1673,7 @@
       </offer>
       <offer id="f0_1CZ91TZZAI" available="true">
         <name>1CZ91TZZAI Дверь багажника  СЕ JOURNEY 2.4 в сборе</name>
-        <price>10080.0</price>
+        <price>10081.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -3647,7 +3647,7 @@
       </offer>
       <offer id="f0_5184251AH" available="true">
         <name>5184251AH Коленвал двигателя</name>
-        <price>9240.0</price>
+        <price>9241.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -4926,7 +4926,7 @@
       </offer>
       <offer id="f0_68067473AF" available="true">
         <name>68067473AF Двері задні, ліві</name>
-        <price>8400.0</price>
+        <price>8401.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -6630,7 +6630,7 @@
       </offer>
       <offer id="f0_68225979AB" available="true">
         <name>68225979AB Блок цилиндров Dodge Journey 11-19 3.6</name>
-        <price>8400.0</price>
+        <price>8401.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7092,7 +7092,7 @@
       </offer>
       <offer id="f0_68257901AA" available="true">
         <name>68257901AA акпп Jeep Cherokee KL 14-18 дорест 2.4 44</name>
-        <price>26881.0</price>
+        <price>26882.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7613,7 +7613,7 @@
       </offer>
       <offer id="f0_68292645AB" available="true">
         <name>68292645AB АКПП, 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>25201.0</price>
+        <price>25202.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7626,7 +7626,7 @@
       </offer>
       <offer id="f0_68292765AD" available="true">
         <name>68292765AD Редуктор з кронштейн 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>8400.0</price>
+        <price>8401.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7640,7 +7640,7 @@
       </offer>
       <offer id="f0_68292767AC" available="false">
         <name>68292767AC Роздаточна коробка передній редуктор 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>10500.0</price>
+        <price>10501.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7972,7 +7972,7 @@
       </offer>
       <offer id="f0_68330479AE" available="true">
         <name>68330479AE Ланжерон лівий 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>8400.0</price>
+        <price>8401.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8011,7 +8011,7 @@
       </offer>
       <offer id="f0_68340137AA" available="true">
         <name>68340137AA Задня четверть ліва cherokee</name>
-        <price>8400.0</price>
+        <price>8401.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8688,7 +8688,7 @@
       </offer>
       <offer id="f0_RL227475AP" available="true">
         <name>RL227475AP АКПП Чірокі кл</name>
-        <price>27301.0</price>
+        <price>27302.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
