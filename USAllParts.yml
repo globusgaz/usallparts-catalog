@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2025-11-19 08:28">
+<yml_catalog date="2025-11-19 09:24">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -7518,14 +7518,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">68279716AA</param>
       </offer>
-      <offer id="f0_68282446AB" available="true">
+      <offer id="f0_68282446AB" available="false">
         <name>68282446AB Роздаточна коробка cherokee</name>
         <price>12632.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>68282446AB</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>68282446AB Роздаточна коробка cherokee</description>
         <picture>https://drive.google.com/uc?id=1Y0jLM0SX20U6WmmeJpMCccHYV9VObO10</picture>
         <param name="Виробник">CHRYSLER</param>
