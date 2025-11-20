@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2025-11-20 13:30">
+<yml_catalog date="2025-11-20 14:21">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -429,14 +429,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">04891577AC</param>
       </offer>
-      <offer id="f0_04891585AC" available="true">
+      <offer id="f0_04891585AC" available="false">
         <name>04891585AC Педаль газу JEEP</name>
         <price>845.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>04891585AC</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>04891585AC Педаль газу JEEP</description>
         <picture>https://drive.google.com/uc?id=1NSg8lknR6FL3jleKlc9YojvA_TtmzJ-N</picture>
         <picture>https://drive.google.com/uc?id=1eXuxznyGwCoKUv51wajT6JhCQslt9EgC</picture>
@@ -4299,27 +4299,27 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">5UT09RXFAC</param>
       </offer>
-      <offer id="f0_5UT12TRMAB" available="true">
+      <offer id="f0_5UT12TRMAB" available="false">
         <name>5UT12TRMAB накладка капота прав 50к пробіг Jeep Compass 2018 2.4 44</name>
         <price>845.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>5UT12TRMAB</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>5UT12TRMAB накладка капота прав 50к пробіг Jeep Compass 2018 2.4 44</description>
         <picture>https://drive.google.com/uc?id=1UoD3zuD68uTYU9qi4yOdSrzBkFIZ6o_5</picture>
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">5UT12TRMAB</param>
       </offer>
-      <offer id="f0_5UT13TRMAB" available="true">
+      <offer id="f0_5UT13TRMAB" available="false">
         <name>5UT13TRMAB накладка капота ліва 50к пробіг Jeep Compass 2018 2.4 44</name>
         <price>845.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>5UT13TRMAB</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>5UT13TRMAB накладка капота ліва 50к пробіг Jeep Compass 2018 2.4 44</description>
         <picture>https://drive.google.com/uc?id=1UoD3zuD68uTYU9qi4yOdSrzBkFIZ6o_5</picture>
         <param name="Виробник">CHRYSLER</param>
@@ -8128,14 +8128,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">68369232AA</param>
       </offer>
-      <offer id="f0_68371576AC" available="true">
+      <offer id="f0_68371576AC" available="false">
         <name>68371576AC шторка права</name>
         <price>2957.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>68371576AC</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>68371576AC шторка права</description>
         <picture>https://drive.google.com/uc?id=1UoD3zuD68uTYU9qi4yOdSrzBkFIZ6o_5</picture>
         <param name="Виробник">CHRYSLER</param>
