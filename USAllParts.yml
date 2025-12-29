@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2025-12-29 16:27">
+<yml_catalog date="2025-12-29 17:19">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -6707,14 +6707,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">68237069AC</param>
       </offer>
-      <offer id="f0_68238841AB" available="true">
+      <offer id="f0_68238841AB" available="false">
         <name>68238841AB Піввісь перед ліва cherokee</name>
-        <price>6127.0</price>
+        <price>0.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>68238841AB</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>68238841AB Піввісь перед ліва cherokee</description>
         <picture>https://drive.google.com/uc?id=1SPvKI0V4JzgIE7gEDuRpLYFy1gDWw23o</picture>
         <picture>https://drive.google.com/uc?id=156Fs3ZSHgcihQxJkj3Te1BMFtGkIkHJk</picture>
