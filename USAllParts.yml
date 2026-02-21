@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-02-21 11:23">
+<yml_catalog date="2026-02-21 12:50">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -3808,14 +3808,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">55112661AB</param>
       </offer>
-      <offer id="f0_55112867AA" available="true">
+      <offer id="f0_55112867AA" available="false">
         <name>55112867AA захист підкрилка правий</name>
         <price>173.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>55112867AA</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>55112867AA захист підкрилка правий</description>
         <picture>https://drive.google.com/uc?id=1UoD3zuD68uTYU9qi4yOdSrzBkFIZ6o_5</picture>
         <param name="Виробник">CHRYSLER</param>
@@ -8354,14 +8354,14 @@
         <param name="Виробник">CHRYSLER</param>
         <param name="Код запчастини">6MZ66XSAAA</param>
       </offer>
-      <offer id="f0_6MZ68LT5AB" available="true">
+      <offer id="f0_6MZ68LT5AB" available="false">
         <name>6MZ68LT5AB Накладка шифтера Jeep Compass 17-21</name>
         <price>864.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
         <vendorCode>6MZ68LT5AB</vendorCode>
-        <stock_quantity>1</stock_quantity>
+        <stock_quantity>0</stock_quantity>
         <description>6MZ68LT5AB Накладка шифтера Jeep Compass 17-21</description>
         <picture>https://drive.google.com/uc?id=1kPzx0JD46qSeQG6v7pAnEDEhBj1SkYzz</picture>
         <picture>https://drive.google.com/uc?id=1iXlDOwfzBzG-9QibhZFOOYtEJMA8_kX-</picture>
