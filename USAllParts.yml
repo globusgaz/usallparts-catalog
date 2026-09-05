@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<yml_catalog date="2026-09-05 03:19">
+<yml_catalog date="2026-09-05 08:07">
   <shop>
     <name>USAllParts</name>
     <company>USAllParts</company>
@@ -6617,7 +6617,7 @@
       </offer>
       <offer id="f0_68225979AB" available="true">
         <name>68225979AB Блок цилиндров Dodge Journey 11-19 3.6</name>
-        <price>8908.0</price>
+        <price>8909.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7600,7 +7600,7 @@
       </offer>
       <offer id="f0_68292645AB" available="true">
         <name>68292645AB АКПП, 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>26725.0</price>
+        <price>26726.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7613,7 +7613,7 @@
       </offer>
       <offer id="f0_68292765AD" available="true">
         <name>68292765AD Редуктор з кронштейн 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>8908.0</price>
+        <price>8909.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7959,7 +7959,7 @@
       </offer>
       <offer id="f0_68330479AE" available="true">
         <name>68330479AE Ланжерон лівий 50к пробіг Jeep Compass 2018 2.4 44</name>
-        <price>8908.0</price>
+        <price>8909.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -7998,7 +7998,7 @@
       </offer>
       <offer id="f0_68340137AA" available="true">
         <name>68340137AA Задня четверть ліва cherokee</name>
-        <price>8908.0</price>
+        <price>8909.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
@@ -8103,7 +8103,7 @@
       </offer>
       <offer id="f0_68229788AA" available="true">
         <name>68229788AA Двигатель 2,4 4х4 cherokee 70к пробіг</name>
-        <price>24498.0</price>
+        <price>24499.0</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <vendor>CHRYSLER</vendor>
